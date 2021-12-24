@@ -7,14 +7,7 @@ let option = {
         }
     },
     xAxis: {
-        data: [
-            "脱保1年",
-            "脱保2年",
-            "脱保3年",
-            "脱保4年",
-            "脱保5年",
-            "脱保5年以上",
-        ],
+        data: ["发放提成", "收取提成", "收取提成", "收取提成"],
         axisLine: {
             lineStyle: {
                 color: "#087B82"
@@ -25,7 +18,6 @@ let option = {
         },
         axisLabel: {
             show: true,
-            interval: 0,
             textStyle: {
                 color: "#B9F4F3"
             }
@@ -50,6 +42,19 @@ let option = {
                 lineStyle: {
                     color: "#087B82"
                 }
+            }
+        },
+        {
+            type: "value",
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: "#B9F4F3"
+                },
+                formatter: "{value}%"
+            },
+            splieLine: {
+                show: false
             }
         }
     ],
@@ -79,8 +84,16 @@ let option = {
                     }
                 ], false)
             },
-            data: [22, 22, 33, 44, 99, 33],
+            data: [22, 22, 33, 44],
             barGap: 0,
+            label: {
+                show: true,
+                position: "insideBottom",
+                textStyle: {
+                    color: "#fff",
+                    fontSize: 12
+                }
+            }
         },
         {
             type: "bar",
@@ -108,7 +121,7 @@ let option = {
                 )
             },
             barGap: 0,
-            data: [22, 22, 33, 44, 99, 33]
+            data: [22, 22, 33, 44]
         },
         {
             name: "b",
@@ -129,6 +142,24 @@ let option = {
             symbolPosition: "end",
             data: [22, 22, 33, 44, 99, 44],
             z: 3
+        },
+        {
+            name: "line",
+            z: 3,
+            type: "line",
+            yAxisIndex: 1,
+            data: [22, 66, 44, 11],
+            itemStyle: {
+                color: "#FFCC0E"
+            },
+            label: {
+                show: true,
+                color: "#fff",
+                formatter: function (params) {
+                    return params.value + "%"
+                }
+            },
+            symbolSize: 8
         }
     ]
 }
